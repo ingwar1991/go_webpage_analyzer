@@ -1,0 +1,18 @@
+{{define "base"}}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{block "title" .}}Webpage Analyzer{{end}}</title>
+</head>
+<body>
+    <h1>Webpage Analyzer</h1>
+
+    {{if .Error}}
+    <p style="color: red;">Error: {{.Error}}</p>
+    {{end}}
+
+    {{block "content" .}}{{end}}
+</body>
+</html>
+{{end}}

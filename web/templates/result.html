@@ -1,0 +1,25 @@
+{{define "title"}}Webpage Analyzer Result{{end}}
+
+{{define "content"}}
+{{if not .Error}}
+<h2>Results:</h2>
+<ul>
+    <li><strong>HTML Version:</strong> {{.Result.HTMLVersion}}</li>
+    <li><strong>Page Title:</strong> {{.Result.Title}}</li>
+    <li><strong>Headings:</strong>
+        <ul>
+            {{range $k, $v := .Result.Headings}}<li>{{$k}}: {{$v}}</li>{{end}}
+        </ul>
+    </li>
+    <li><strong>Internal Links:</strong> {{.Result.InternalLinks}}</li>
+    <li><strong>External Links:</strong> {{.Result.ExternalLinks}}</li>
+    <li><strong>Broken Links:</strong> {{.Result.BrokenLinks}}</li>
+    <li><strong>Login Form Present:</strong> {{.Result.HasLoginForm}}</li>
+</ul>
+{{end}}
+<p>
+    <a href="/" style="text-decoration:none; padding:8px 12px; background:#eee; border:1px solid #ccc; border-radius:4px;">
+        &larr; Analyze Another Webpage 
+    </a>
+</p>
+{{end}}

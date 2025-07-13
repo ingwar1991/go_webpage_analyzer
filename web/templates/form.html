@@ -1,0 +1,10 @@
+{{define "title"}}Webpage Analyzer{{end}}
+
+{{define "content"}}
+<h2>Analyze a Webpage</h2>
+
+<form method="POST" action="/">
+    <input type="text" name="url" value="{{.Input}}" placeholder="https://example.com" />
+    <input type="submit" value="Submit" />
+</form>
+{{end}}
